@@ -41,7 +41,23 @@ private:
 	///time boudaries for data acquisition
 	double Start;
 	double Stop;
-
+	
+	/**
+	 * @brief store a spike
+	 * stores spike time in a document associated with Neuron Id can be done at any time
+	 */
+	 void StoreSpike(unsigned int time, unsigned int i);
+	
+	/**
+	* @brief create document with simulation data
+	* writes paires values of SpikeTimes and indexes in a document at the end of simulation
+	*/
+	 void writeSpikes() const;
+	 
+	/**
+	* @brief choose time boundaries between which spikes are recorded
+	*/
+	void setDataAcquisition();
 
 public:
 
@@ -68,28 +84,11 @@ public:
 	~Network();
 
 	/**
-	 * @brief updates all cels in a network
+	 * @brief updates all cells in a network
 	 * Calls update method of all Neurons and handles potential transmission
 	 */
 	void UpdateNetwork(double Iext_, unsigned int time);
-	
-	
-	/**
-	 * @brief store a spike
-	 * stores spike time in a document associated with Neuron Id can be done at any time
-	 */
-	 void StoreSpike(unsigned int time, unsigned int i);
-	
-	/**
-	* @brief create document with simulation data
-	* writes paires values of SpikeTimes and indexes in a document at the end of simulation
-	*/
-	 void writeSpikes() const;
-	 
-	/**
-	* @a choose time boundaries between which spikes are recorded
-	*/
-	void setDataAcquisition();
+
 	
 };
 
