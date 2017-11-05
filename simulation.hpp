@@ -25,7 +25,8 @@ class Simulation{
 	
 	
 	/**
-	* allows to set an external current
+	* @brief set external current
+	* allows to set time boundaries for programmed external application
 	* @param double start time of stimulation
 	* @param double end time of stimulation
 	* @param double value of stimualtion (mV)
@@ -52,17 +53,19 @@ class Simulation{
 	~Simulation();
 	
 	/**
+	* @brief runs the entire simulation
 	*runs the simulation by calling Network's update method
 	*increments the simulation time with each step
 	*/
 	void Run();
 	
 	/**
+	* @brief time convertor
 	*takes time value in steps and converts it to ms
-	* @param double (int) time in steps
+	* @param int time in steps
 	* @return double time in ms
 	*/
-	double RealTime(double time) const;
+	double RealTime(int time) const;
 	
 	/**
 	* allows to set simulation time in ms
