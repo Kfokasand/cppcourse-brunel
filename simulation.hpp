@@ -69,15 +69,8 @@ class Simulation{
 	
 	/**
 	* @brief set simualtion length in ms
-	*
 	*/
 	void SetSimTime();
-	
-	/**
-	* writes membrane potential of all cells into a file at a given time
-	*/
-	void StoreState();
-	
 
 
 };
