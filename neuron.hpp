@@ -41,6 +41,17 @@ class Neuron{
 	 * @return int buffer index
 	 */
 		unsigned int Index(unsigned int time);
+	
+	/**
+	 * adds a spike to SpikeHistory and calls the Neuron's reset method
+	 * @param double: the time step to convert time value to RealTime (ms)
+	 */
+		void Fire(double H);
+	/**
+	 * resets membrane potential to rest value
+	 * no arguments or return value
+	 */
+		void Reset();
 
 	public:
 
@@ -106,20 +117,8 @@ class Neuron{
 	 * allows to cycle through given number of updates for tests
 	 * @param int number of cycles
 	 */
-	 void RepeatUpdate(int i, double H, double Iext);
+	 	void RepeatUpdate(int i, double H, double Iext);
 		
-
-	/**
-	 * resets membrane potential to rest value
-	 * no arguments or return value
-	 */
-		void Reset();
-		
-	/**
-	 * adds a spike to SpikeHistory and calls the Neuron's reset method
-	 * @param double: the time step to convert time value to RealTime (ms)
-	 */
-		void Fire(double H);
 		
 	/**
 	 * takes in voltage and stores it in Neuron's buffer index [(time+D)%(D+1)] according to general time
@@ -130,12 +129,9 @@ class Neuron{
 		
 	/**
 	 * indicates if the neuron is excitatory
-	 * @return bool true if the neuron is excitatorz, false if inhibitory
-	 */
-	 
-	 bool isEx() const;
-
-
+	 * @return bool true if the neuron is excitatory, false if inhibitory
+	 */ 
+		 bool isEx() const;
 
 };
 
