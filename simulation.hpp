@@ -68,7 +68,8 @@ class Simulation{
 	double RealTime(int time) const;
 	
 	/**
-	* allows to set simulation time in ms
+	* @brief set simualtion length in ms
+	*
 	*/
 	void SetSimTime();
 	
