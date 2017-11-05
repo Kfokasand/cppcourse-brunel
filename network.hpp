@@ -54,15 +54,10 @@ public:
 	
 	/**
 	 * @brief constructor for default simulation
-	 * Used for custom simulation
-	 * @param int number of desires Neurons
-	 * @param int number of excitatory neurons
-	 * @param int Ni number of wanted inhibitory neurons
-	 * @param int Ce number of excitatory connections
-	 * @param int Ci number of inhibitory connections
-	 * @param int Cext number of external connections 
+	 * Used for custom simulation 
 	 * @param double Je excitatory coefficient
 	 * @param double Ji inhibitory coefficient
+	 * @param double med average external number of spikes
 	 */
 	Network(double je, double ji, double med);
 	
@@ -73,29 +68,26 @@ public:
 	~Network();
 
 	/**
+	 * @brief updates all cels in a network
 	 * Calls update method of all Neurons and handles potential transmission
 	 */
 	void UpdateNetwork(double Iext_, unsigned int time);
 	
-	/**
-	 * stores the membrane potential of all Neurons contained in Network in a vector
-	 * @return returns vector of potentials (double)
-	 */
-	vector<double> StoreState() const;
 	
 	/**
-	 *stores spike time in a document associated with Neuron Id can be done at any time
+	 * @brief store a spike
+	 * stores spike time in a document associated with Neuron Id can be done at any time
 	 */
-	 
 	 void StoreSpike(unsigned int time, unsigned int i);
 	
 	/**
-	*writes paires values of SpikeTimes and indexes in a document at the end of simulation
+	* @brief create document with simulation data
+	* writes paires values of SpikeTimes and indexes in a document at the end of simulation
 	*/
 	 void writeSpikes() const;
 	 
 	/**
-	* allows to choose time boundaries between which spikes are recorded
+	* @a choose time boundaries between which spikes are recorded
 	*/
 	void setDataAcquisition();
 	
