@@ -3,6 +3,8 @@ BA3 SV informatics project
 
 This programm allows to simulate the neural activity of a network made of 12500 neurons. It records membrane potential for each neuron at a given step of time and delivers them in a txt file (ble.txt)
 
+To run simulation, use cmake commands from build folder.
+
 Simulations can be ran Custom (selecting parameters) or Automatic
 
 
